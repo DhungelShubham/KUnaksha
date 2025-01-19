@@ -9,4 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Adding a marker for Kathmandu University
 var marker = L.marker([27.6194, 85.5395]).addTo(map);
-marker.bindPopup("Kathmandu University").openPopup();
+// marker.bindPopup("Kathmandu University").openPopup();
+marker.on('click', function() {
+    window.location.href = "maps/index.html";
+});
