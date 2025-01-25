@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script type="module">
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3MDE5ODhlOS1lYjE4LTRhYTItYTYwOC1hYmI4MmIyYTJhNjUiLCJpZCI6MjYyNTQ0LCJpYXQiOjE3MzQyNTE4OTh9.XKt4Ola_5IvKAFjl3Ka1BerJfDUMCqcTiG_3omuN9Rk';
+
+    const viewer = new Cesium.Viewer('cesiumContainer',{
+      imageryProvider: new Cesium.OpenStreetMapImageryProvider({
+        url: 'https://a.tile.openstreetmap.org/',
+      }),
+      geocoder:true,
+      timeline:false,
+      fullscreen:false,
+      sceneMode: Cesium.SceneMode.SCENE3D,
+    });
+    27.61934515874977, 85.53697820337722;
+    const locations=[
+      { name: 'Multipurpose Hall', lat: 27.61934515874977, lon: 85.53697820337722, alt: 145},
+    ];
+
+    locations.forEach(location => {
+    const position = Cesium.Cartesian3.fromDegrees(location.lon, location.lat, location.alt);
+    viewer.entities.add({
+        name: location.name, 
+        position: position,
+        point: {
+            pixelSize: 10,
+            color: Cesium.Color.YELLOW,
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 2,
+        },
+        description: `
+            <h3>${location.name}</h3>
+            <p>Latitude: ${location.lat.toFixed(6)}</p>
+            <p>Longitude: ${location.lon.toFixed(6)}</p>
+            <p>Altitude: ${location.alt} meters</p>
+        `,
+    });
+})
+
+    viewer.flyTo(viewer.entities);
+
+// Enable picking
+    viewer.screenSpaceEventHandler.setInputAction(function (click) {
+    const pickedObject = viewer.scene.pick(click.position);
+    if (Cesium.defined(pickedObject)) {
+        viewer.selectedEntity = pickedObject.id; // Show info in the default info box
+    }
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+    
+
+  </script>
+</body>
+</html>
