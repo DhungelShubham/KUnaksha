@@ -11,7 +11,9 @@
   <script type="module">
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3MDE5ODhlOS1lYjE4LTRhYTItYTYwOC1hYmI4MmIyYTJhNjUiLCJpZCI6MjYyNTQ0LCJpYXQiOjE3MzQyNTE4OTh9.XKt4Ola_5IvKAFjl3Ka1BerJfDUMCqcTiG_3omuN9Rk';
     const viewer = new Cesium.Viewer("cesiumContainer", {
-    globe: false,
+      animation:false,
+      timeline:false,
+      globe: false,
     geocoder: Cesium.IonGeocodeProviderType.GOOGLE,
 });
 try {
