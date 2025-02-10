@@ -3553,11 +3553,11 @@ export class Color {
     static clone(color: Color, result?: Color): Color;
     /**
      * Returns true if the first Color equals the second color.
-     * @param left - The first Color to compare for equality.
-     * @param right - The second Color to compare for equality.
+     * @param [left] - The first Color to compare for equality.
+     * @param [right] - The second Color to compare for equality.
      * @returns <code>true</code> if the Colors are equal; otherwise, <code>false</code>.
      */
-    static equals(left: Color, right: Color): boolean;
+    static equals(left?: Color, right?: Color): boolean;
     /**
      * Returns a duplicate of a Color instance.
      * @param [result] - The object to store the result in, if undefined a new instance will be created.
@@ -3566,10 +3566,10 @@ export class Color {
     clone(result?: Color): Color;
     /**
      * Returns true if this Color equals other.
-     * @param other - The Color to compare for equality.
+     * @param [other] - The Color to compare for equality.
      * @returns <code>true</code> if the Colors are equal; otherwise, <code>false</code>.
      */
-    equals(other: Color): boolean;
+    equals(other?: Color): boolean;
     /**
      * Returns <code>true</code> if this Color equals other componentwise within the specified epsilon.
      * @param other - The Color to compare for equality.
@@ -4963,17 +4963,17 @@ export class Credit {
     readonly element: HTMLElement;
     /**
      * Returns true if the credits are equal
-     * @param left - The first credit
-     * @param right - The second credit
+     * @param [left] - The first credit
+     * @param [right] - The second credit
      * @returns <code>true</code> if left and right are equal, <code>false</code> otherwise.
      */
-    static equals(left: Credit, right: Credit): boolean;
+    static equals(left?: Credit, right?: Credit): boolean;
     /**
      * Returns true if the credits are equal
-     * @param credit - The credit to compare to.
+     * @param [credit] - The credit to compare to.
      * @returns <code>true</code> if left and right are equal, <code>false</code> otherwise.
      */
-    equals(credit: Credit): boolean;
+    equals(credit?: Credit): boolean;
     /**
      * Duplicates a Credit instance.
      * @param [credit] - The Credit to duplicate.
@@ -5349,11 +5349,11 @@ export class DistanceDisplayCondition {
     static unpack(array: number[], startingIndex?: number, result?: DistanceDisplayCondition): DistanceDisplayCondition;
     /**
      * Determines if two distance display conditions are equal.
-     * @param left - A distance display condition.
-     * @param right - Another distance display condition.
+     * @param [left] - A distance display condition.
+     * @param [right] - Another distance display condition.
      * @returns Whether the two distance display conditions are equal.
      */
-    static equals(left: DistanceDisplayCondition, right: DistanceDisplayCondition): boolean;
+    static equals(left?: DistanceDisplayCondition, right?: DistanceDisplayCondition): boolean;
     /**
      * Duplicates a distance display condition instance.
      * @param [value] - The distance display condition to duplicate.
@@ -5369,10 +5369,10 @@ export class DistanceDisplayCondition {
     clone(result?: DistanceDisplayCondition): DistanceDisplayCondition;
     /**
      * Determines if this distance display condition is equal to another.
-     * @param other - Another distance display condition.
+     * @param [other] - Another distance display condition.
      * @returns Whether this distance display condition is equal to the other.
      */
-    equals(other: DistanceDisplayCondition): boolean;
+    equals(other?: DistanceDisplayCondition): boolean;
 }
 
 /**
@@ -12024,11 +12024,11 @@ export class OrientedBoundingBox {
     /**
      * Compares the provided OrientedBoundingBox componentwise and returns
      * <code>true</code> if they are equal, <code>false</code> otherwise.
-     * @param left - The first OrientedBoundingBox.
-     * @param right - The second OrientedBoundingBox.
+     * @param [left] - The first OrientedBoundingBox.
+     * @param [right] - The second OrientedBoundingBox.
      * @returns <code>true</code> if left and right are equal, <code>false</code> otherwise.
      */
-    static equals(left: OrientedBoundingBox, right: OrientedBoundingBox): boolean;
+    static equals(left?: OrientedBoundingBox, right?: OrientedBoundingBox): boolean;
     /**
      * Duplicates this OrientedBoundingBox instance.
      * @param [result] - The object onto which to store the result.
@@ -16175,11 +16175,11 @@ export class Spherical {
     static normalize(spherical: Spherical, result?: Spherical): Spherical;
     /**
      * Returns true if the first spherical is equal to the second spherical, false otherwise.
-     * @param left - The first Spherical to be compared.
-     * @param right - The second Spherical to be compared.
+     * @param [left] - The first Spherical to be compared.
+     * @param [right] - The second Spherical to be compared.
      * @returns true if the first spherical is equal to the second spherical, false otherwise.
      */
-    static equals(left: Spherical, right: Spherical): boolean;
+    static equals(left?: Spherical, right?: Spherical): boolean;
     /**
      * Returns true if the first spherical is within the provided epsilon of the second spherical, false otherwise.
      * @param left - The first Spherical to be compared.
@@ -16190,10 +16190,10 @@ export class Spherical {
     static equalsEpsilon(left: Spherical, right: Spherical, epsilon?: number): boolean;
     /**
      * Returns true if this spherical is equal to the provided spherical, false otherwise.
-     * @param other - The Spherical to be compared.
+     * @param [other] - The Spherical to be compared.
      * @returns true if this spherical is equal to the provided spherical, false otherwise.
      */
-    equals(other: Spherical): boolean;
+    equals(other?: Spherical): boolean;
     /**
      * Creates a duplicate of this Spherical.
      * @param [result] - The object to store the result into, if undefined a new instance will be created.
@@ -18761,7 +18761,6 @@ export function subdivideArray(array: any[], numberOfArrays: number): void;
  * @param text - The text to write.
  * @param [options] - Object with the following properties:
  * @param [options.font = '10px sans-serif'] - The CSS font to use.
- * @param [options.textBaseline = 'bottom'] - The baseline of the text.
  * @param [options.fill = true] - Whether to fill the text.
  * @param [options.stroke = false] - Whether to stroke the text.
  * @param [options.fillColor = Color.WHITE] - The fill color.
@@ -18775,7 +18774,6 @@ export function subdivideArray(array: any[], numberOfArrays: number): void;
  */
 export function writeTextToCanvas(text: string, options?: {
     font?: string;
-    textBaseline?: string;
     fill?: boolean;
     stroke?: boolean;
     fillColor?: Color;
@@ -19040,6 +19038,21 @@ export class BillboardVisualizer {
      */
     destroy(): void;
 }
+
+/**
+ * The BoundingSphere has been computed.
+ */
+export const DONE = 0;
+
+/**
+ * The BoundingSphere is still being computed.
+ */
+export const PENDING = 1;
+
+/**
+ * The BoundingSphere does not exist.
+ */
+export const FAILED = 2;
 
 /**
  * A {@link GeometryUpdater} for boxes.
@@ -20438,10 +20451,10 @@ export class DataSourceClock {
     clone(result?: DataSourceClock): DataSourceClock;
     /**
      * Returns true if this DataSourceClock is equivalent to the other
-     * @param other - The other DataSourceClock to compare to.
+     * @param [other] - The other DataSourceClock to compare to.
      * @returns <code>true</code> if the DataSourceClocks are equal; otherwise, <code>false</code>.
      */
-    equals(other: DataSourceClock): boolean;
+    equals(other?: DataSourceClock): boolean;
     /**
      * Assigns each unassigned property on this object to the value
      * of the same property on the provided source object.
@@ -26475,10 +26488,10 @@ export class Billboard {
     /**
      * Determines if this billboard equals another billboard.  Billboards are equal if all their properties
      * are equal.  Billboards in different collections can be equal.
-     * @param other - The billboard to compare for equality.
+     * @param [other] - The billboard to compare for equality.
      * @returns <code>true</code> if the billboards are equal; otherwise, <code>false</code>.
      */
-    equals(other: Billboard): boolean;
+    equals(other?: Billboard): boolean;
 }
 
 /**
@@ -30646,7 +30659,7 @@ export class ClippingPolygon {
      * @param right - The second polygon.
      * @returns <code>true</code> if left and right are equal, <code>false</code> otherwise.
      */
-    static equals(left: Plane, right: Plane): boolean;
+    static equals(left: ClippingPolygon, right: ClippingPolygon): boolean;
     /**
      * Computes a cartographic rectangle which encloses the polygon defined by the list of positions, including cases over the international date line and the poles.
      * @param [result] - An object in which to store the result.
@@ -34033,6 +34046,13 @@ export namespace ITwinData {
      * @param [rootDocument] - The path of the root document for this reality data
      */
     function createDataSourceForRealityDataId(iTwinId: string, realityDataId: string, type?: ITwinPlatform.RealityDataType, rootDocument?: string): Promise<GeoJsonDataSource | KmlDataSource>;
+    /**
+     * Load data from the Geospatial Features API as GeoJSON.
+     * @param iTwinId - The id of the iTwin to load data from
+     * @param collectionId - The id of the data collection to load
+     * @param [limit = 10000] - number of items per page, must be between 1 and 10,000 inclusive
+     */
+    function loadGeospatialFeatures(iTwinId: string, collectionId: string, limit?: number): Promise<GeoJsonDataSource>;
 }
 
 /**
@@ -34386,10 +34406,10 @@ export class ImageryLayer {
      *   alert(`Encountered an error while creating an imagery layer! ${error}`);
      * });
      * @param imageryProviderPromise - A promise which resolves to a imagery provider
-     * @param options - An object describing initialization options
+     * @param [options] - An object describing initialization options
      * @returns The created imagery layer.
      */
-    static fromProviderAsync(imageryProviderPromise: Promise<ImageryProvider>, options: ImageryLayer.ConstructorOptions): ImageryLayer;
+    static fromProviderAsync(imageryProviderPromise: Promise<ImageryProvider>, options?: ImageryLayer.ConstructorOptions): ImageryLayer;
     /**
      * Create a new imagery layer for ion's default global base imagery layer, currently Bing Maps. The layer will handle any asynchronous loads or errors, and begin rendering the imagery layer once ready.
      * @example
@@ -35217,10 +35237,10 @@ export class Label {
     /**
      * Determines if this label equals another label.  Labels are equal if all their properties
      * are equal.  Labels in different collections can be equal.
-     * @param other - The label to compare for equality.
+     * @param [other] - The label to compare for equality.
      * @returns <code>true</code> if the labels are equal; otherwise, <code>false</code>.
      */
-    equals(other: Label): boolean;
+    equals(other?: Label): boolean;
     /**
      * Returns true if this object was destroyed; otherwise, false.
      * <br /><br />
@@ -39282,10 +39302,10 @@ export class PointPrimitive {
     /**
      * Determines if this point equals another point.  Points are equal if all their properties
      * are equal.  Points in different collections can be equal.
-     * @param other - The point to compare for equality.
+     * @param [other] - The point to compare for equality.
      * @returns <code>true</code> if the points are equal; otherwise, <code>false</code>.
      */
-    equals(other: PointPrimitive): boolean;
+    equals(other?: PointPrimitive): boolean;
 }
 
 /**
@@ -43514,6 +43534,95 @@ export class VoxelPrimitive {
         clock?: Clock;
     });
     /**
+     * The number of levels of detail containing available tiles in the tileset.
+     */
+    readonly availableLevels: number | undefined;
+    /**
+     * The event fired to indicate that a tile's content was loaded.
+     * <p>
+     * This event is fired during the tileset traversal while the frame is being rendered
+     * so that updates to the tile take effect in the same frame.  Do not create or modify
+     * Cesium entities or primitives during the event listener.
+     * </p>
+     * @example
+     * voxelPrimitive.tileLoad.addEventListener(function() {
+     *     console.log('A tile was loaded.');
+     * });
+     */
+    tileLoad: Event;
+    /**
+     * This event fires once for each visible tile in a frame.
+     * <p>
+     * This event is fired during the traversal while the frame is being rendered.
+     * @example
+     * voxelPrimitive.tileVisible.addEventListener(function() {
+     *     console.log('A tile is visible.');
+     * });
+     */
+    tileVisible: Event;
+    /**
+     * The event fired to indicate that a tile's content failed to load.
+     * @example
+     * voxelPrimitive.tileFailed.addEventListener(function() {
+     *     console.log('An error occurred loading tile.');
+     * });
+     */
+    tileFailed: Event;
+    /**
+     * The event fired to indicate that a tile's content was unloaded.
+     * @example
+     * voxelPrimitive.tileUnload.addEventListener(function() {
+     *     console.log('A tile was unloaded from the cache.');
+     * });
+     */
+    tileUnload: Event;
+    /**
+     * The event fired to indicate progress of loading new tiles. This event is fired when a new tile
+     * is requested, when a requested tile is finished downloading, and when a downloaded tile has been
+     * processed and is ready to render.
+     * <p>
+     * The number of pending tile requests, <code>numberOfPendingRequests</code>, and number of tiles
+     * processing, <code>numberOfTilesProcessing</code> are passed to the event listener.
+     * </p>
+     * <p>
+     * This event is fired at the end of the frame after the scene is rendered.
+     * </p>
+     * @example
+     * voxelPrimitive.loadProgress.addEventListener(function(numberOfPendingRequests, numberOfTilesProcessing) {
+     *     if ((numberOfPendingRequests === 0) && (numberOfTilesProcessing === 0)) {
+     *         console.log('Finished loading');
+     *         return;
+     *     }
+     *
+     *     console.log(`Loading: requests: ${numberOfPendingRequests}, processing: ${numberOfTilesProcessing}`);
+     * });
+     */
+    loadProgress: Event;
+    /**
+     * The event fired to indicate that all tiles that meet the screen space error this frame are loaded. The voxel
+     * primitive is completely loaded for this view.
+     * <p>
+     * This event is fired at the end of the frame after the scene is rendered.
+     * </p>
+     * @example
+     * voxelPrimitive.allTilesLoaded.addEventListener(function() {
+     *     console.log('All tiles are loaded');
+     * });
+     */
+    allTilesLoaded: Event;
+    /**
+     * The event fired to indicate that all tiles that meet the screen space error this frame are loaded. This event
+     * is fired once when all tiles in the initial view are loaded.
+     * <p>
+     * This event is fired at the end of the frame after the scene is rendered.
+     * </p>
+     * @example
+     * voxelPrimitive.initialTilesLoaded.addEventListener(function() {
+     *     console.log('Initial tiles are loaded');
+     * });
+     */
+    initialTilesLoaded: Event;
+    /**
      * Gets a value indicating whether or not the primitive is ready for use.
      */
     readonly ready: boolean;
@@ -43728,6 +43837,11 @@ export class VoxelProvider {
         tileZ?: number;
     }): Promise<any[][]> | undefined;
 }
+
+/**
+ * The number of levels of detail containing available tiles in the tileset.
+ */
+export const availableLevels: number | undefined;
 
 export const shaderUniforms: {
     [key: string]: any;
@@ -44029,7 +44143,7 @@ export namespace WebMapTileServiceImageryProvider {
  * @example
  * // Example 1. USGS shaded relief tiles (KVP)
  * const shadedRelief1 = new Cesium.WebMapTileServiceImageryProvider({
- *     url : 'http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer/WMTS',
+ *     url : 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer/WMTS',
  *     layer : 'USGSShadedReliefOnly',
  *     style : 'default',
  *     format : 'image/jpeg',
@@ -44042,7 +44156,7 @@ export namespace WebMapTileServiceImageryProvider {
  * @example
  * // Example 2. USGS shaded relief tiles (RESTful)
  * const shadedRelief2 = new Cesium.WebMapTileServiceImageryProvider({
- *     url : 'http://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer/WMTS/tile/1.0.0/USGSShadedReliefOnly/{Style}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.jpg',
+ *     url : 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSShadedReliefOnly/MapServer/WMTS/tile/1.0.0/USGSShadedReliefOnly/{Style}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.jpg',
  *     layer : 'USGSShadedReliefOnly',
  *     style : 'default',
  *     format : 'image/jpeg',

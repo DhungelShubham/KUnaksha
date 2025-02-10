@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "cesium": "^1.125.0"
+  "devDependencies": {
+    "cesium": "^1.126.0"
   }
 }
