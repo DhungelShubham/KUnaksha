@@ -24,6 +24,10 @@
             timeline: false,
         });
 
+        viewer.camera.flyTo({
+            destination:Cesium.Cartesain3.fromDegree(85.53724899350867,27.619391872948153,1442.6060064717171)
+        })
+
         const handler = new Cesium.ScreenSpaceEventHandler(viewer.canvas);
         handler.setInputAction(function (event) {
             const pickedPosition = viewer.scene.pickPosition(event.position);
