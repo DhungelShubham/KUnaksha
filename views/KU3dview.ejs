@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="cesiumContainer"></div>
+  <script type="module">
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3MDE5ODhlOS1lYjE4LTRhYTItYTYwOC1hYmI4MmIyYTJhNjUiLCJpZCI6MjYyNTQ0LCJpYXQiOjE3MzQyNTE4OTh9.XKt4Ola_5IvKAFjl3Ka1BerJfDUMCqcTiG_3omuN9Rk';
+    const viewer = new Cesium.Viewer("cesiumContainer", {
+      terrain: Cesium.Terrain.fromWorldTerrain(),
+      animation:false,
+      timeline:false,
+      clock:false,
+      baseLayerPicker:false,
+      homeButton:false,
+      sceneModePicker:false,
+      navigationHelpButton:false,
+      fullscreenButton:false,
+      geocoder: Cesium.IonGeocodeProviderType.GOOGLE,
+      geocoder:false,
+});
+
+const locations=[
+    {  
+        name:'Multipurpose Hall', 
+        lat:27.619391872948153,
+        lon:85.53724899350867,
+        alt:1442.6060064717171,
+        description: "A large hall used for various university events, seminars, and activities.",
+        image: "images/MH.png"
+    },
+    {  
+        name:'Block 9', 
+        lat:27.619924644794086,
+        lon:85.53903875265267,
+        alt:1451.801328700104,
+        description: 'Department of Computer Sciene and Engineering',
+        image: "images/h.png"
+    },
+    {  
+        name:'Library', 
+        lat:27.618935137448055,
+        lon:85.53859180782936,
+        alt:1467.5981547800166,
+        description: "The central library of Kathmandu University",
+        image: "images/.png"
+    },
+    {  
+        name:'Block 8', 
+        lat:27.619588178774414 ,
+        lon:85.53940841457984 ,
+        alt:1453.0893848424332,
+        description: "Department Of Electrical Engineering",
+        image: "images/.png",
+    },
+    {  
+        name:'Block 7', 
+        lat:27.619270853620513 ,
+        lon:85.53954460345712 ,
+        alt:1451.4229689271863,
+        description:"Department of Biotechnology",
+        image:"images/.png"
+    },
+    {  
+        name:'Block 6', 
+        lat:27.6189731811361 ,
+        lon:85.53927933680691 ,
+        alt:1457.709326187914,
+        description:"Department of Physics and Computional Mathemathics",
+        image:"images.png",
+    },
+    {  
+        name:'Administrative', 
+        lat:27.619582772625428 ,
+        lon:85.53857171581157 ,
+        alt:1463.922842208704,
+        description:"Administrative Block",
+        image:"imges/.png",
+    },
+    {  
+        name:'Lawn', 
+        lat:27.619322089755887 ,
+        lon:85.53858923850397 ,
+        alt:1466.9051509894798,
+        description:"Lawn of Kathmandu University",
+        image:"images/.png",
+    },
+    {  
+        name:'Canteen', 
+        lat:27.61929934674078 ,
+        lon:85.53888642698891 ,
+        alt:1466.5387767709005,
+        description:"Cateen for lunch and Snacks.",
+        image:"images/.png",
+    },
+    {  
+        name:'KU Cafe', 
+        lat:27.61846121894616 ,
+        lon:85.53833073177779 ,
+        alt:1459.7594307608372,
+        description:"KU Cafe for morning suhine and coffee",
+        image:"images/.png",
+    },
+    {  
+        name:'NTIC', 
+        lat:27.61734661610735 ,
+        lon:85.53530879965132 ,
+        alt:1428.971358440048,
+        description:"Nepal Technology Information Center",
+        image:"images/.png",
+    },
+    {  
+        name:'WorkShop',
+        lat:27.617668553357746 ,
+        lon:85.53490191219434 ,
+        alt:1418.8357838361221,
+        description:"Workshop for Crafy Hands",
+        image:"images/.png",
+    },
+    {  
+        name:'Boys Hostel', 
+        lat:27.617772679743478 ,
+        lon:85.53669424902395 ,
+        alt:1443.10014076079,
+        description:"Boys Dormatory",
+        image:"images/.png",
+    },
+    {  
+        name:'Girls Hostel', 
+        lat:27.618126378701316 ,
+        lon:85.53925547189561 ,
+        alt:1456.3038866560905,
+        description:"Girls Dormatory",
+        image:"images/.png",
+    },
+    {  
+        name:'Bank', 
+        lat:27.617455700373004 ,
+        lon:85.53899247617747 ,
+        alt:1463.4391185326765,
+        description:"Official Bank of KU",
+        image:"images/.png",
+    },
+    {  
+        name:'Ground', 
+        lat:27.61863276437187 ,
+        lon:85.5369597379473 ,
+        alt:1433.335048537352,
+        description:'Football and BasketBall Ground',
+        image:"images/h.png",
+    },
+    {  
+        name:'Pharmcy Block', 
+        lat:27.618949278816622 ,
+        lon:85.53810321454411 ,
+        alt:1461.3806099036087,
+        description:"Pharmacy Block",
+        image:"images/.png",
+    },
+    {  
+        name:'Civil Enginerring', 
+        lat:27.61927147761533 ,
+        lon:85.53808290648848 ,
+        alt:1461.4358570347702,
+        description:"Civil Engineering BLock",
+        image:"images./png",
+    },
+    {  
+        name:'Block 10', 
+        lat:27.619721743317807 ,
+        lon:85.53810083729793 ,
+        alt:1459.061302458295,
+        description:"BLock 10",
+        image:"images/.png",
+    },
+    {  
+        name:'Foreign Students Hostel', 
+        lat:27.6176920575628 ,
+        lon:85.53939531682298 ,
+        alt:1459.6210065497776,
+        description:"Foreign Students Dormatory",
+        image:"images/.png",
+    },
+    {  
+        name:'TTC', 
+        lat:27.62010026775487 ,
+        lon:85.53775806534156 ,
+        alt:1459.6210065497776,
+        description:"TTC for buildings and reparing cars",
+        image:"images/,png",
+    },
+
+];
+
+
+locations.forEach(location => {
+    const position = Cesium.Cartesian3.fromDegrees(location.lon, location.lat, location.alt);
+    viewer.entities.add({
+        name: location.name, 
+        position: position,
+        point: {
+            pixelSize: 15,
+            color: Cesium.Color.YELLOW,
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 2,
+        },
+        description: `
+            <h3>${location.name}</h3>
+            <p><b>Description:</b> ${location.description}</p>
+            <p><b>Latitude:</b> ${location.lat.toFixed(6)}</p>
+            <p><b>Longitude:</b> ${location.lon.toFixed(6)}</p>
+            <p><b>Altitude:</b> ${location.alt.toFixed(6)} meters</p>
+            <img src="${location.image}" width="300px" style="border-radius: 10px;">
+        `,
+    });
+});
+    //result.latitude
+
+    viewer.flyTo(viewer.entities);
+/*
+    viewer.camera.flyto({
+        destination:Cesium.fromCartesian3()
+    })*/
+
+// Enable picking
+    viewer.screenSpaceEventHandler.setInputAction(function (click) {
+    const pickedObject = viewer.scene.pick(click.position);
+    if (Cesium.defined(pickedObject)) {
+        viewer.selectedEntity = pickedObject.id; // Show info in the default info box
+    }
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+try {
+  const tileset = await Cesium.createGooglePhotorealistic3DTileset();
+  viewer.scene.primitives.add(tileset);
+} catch (error) {
+  console.log(`Failed to load tileset: ${error}`);
+}
+
+  </script>
+
+<form action="/search" method="get">
+    <input type="text" name="search">
+    <button type="submit" location-id="<% typeof result !== "undefined" ? result.id : "" % Location-name="">Search</button>
+</form>
+</body>
+</html>
+
+
+const id = .getAttribute('Location-id');
+
+<% if (typeof autocompleteSuggestions !== "undefined" && autocompleteSuggestions.length > 0) { %>
+    <% autocompleteSuggestions.forEach(function(suggestion) { %>
+        <li>
+            <div class="autocom-name" name="<%= suggestion.name %>">
+            <%= suggestion.name %>
+            
+            </div>
+        </li>
+        <% }) %>
+        <% }  %>
