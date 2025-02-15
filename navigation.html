@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenRouteService Directions</title>
+    
+    <!-- Include Leaflet.js -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        function openOpenRouteServiceDirections() {
+            const origin = [40.712776, -74.005974];  // New York City (latitude,longitude)
+            const destination = [34.052235, -118.243683];  // Los Angeles (latitude,longitude)
+
+            // OpenRouteService API endpoint for directions
+            const apiUrl = 'https://api.openrouteservice.org/v2/directions/driving-car';
+            const apiKey = '5b3ce3597851110001cf6248143308593c1c409cb63d6d7eb5e96955';  // Your API Key
+
+            // Constructing the API URL
+            const url = apiUrl + '?api_key=' + apiKey + '&start=' + origin[1] + ',' + origin[0] + '&end=' + destination[1] + ',' + destination[0];
+
+            // Fetch directions from OpenRouteService
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.routes && data.routes[0]) {
+                        const route = data.routes[0].geometry.coordinates;
+
+                        // Initialize the map
+                        const map = L.map('map').setView(origin, 5);  // Set the map view centered on the origin
+
+                        // Add OpenStreetMap tiles to the map
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+                        // Convert route coordinates into LatLng objects
+                        const polyline = L.polyline(route.map(coord => [coord[1], coord[0]]), {
+                            color: 'blue',
+                            weight: 5,
+                            opacity: 0.7
+                        }).addTo(map);
+
+                        // Zoom the map to fit the route
+                        map.fitBounds(polyline.getBounds());
+
+                        // Add markers for the origin and destination
+                        L.marker(origin).addTo(map).bindPopup("Origin: New York City");
+                        L.marker(destination).addTo(map).bindPopup("Destination: Los Angeles");
+                    } else {
+                        console.error('No routes found in the response');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching directions:', error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1>OpenRouteService Directions</h1>
+    <p>Click the button below to get directions from New York City to Los Angeles.</p>
+    <button onclick="openOpenRouteServiceDirections()">Get Directions</button>
+
+    <!-- Div for the map -->
+    <div id="map" style="width: 100%; height: 500px;"></div>
+</body>
+</html>

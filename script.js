@@ -80,10 +80,6 @@ KU canteen is also situated in CV Raman Block`,
 
     },
 
-
-
-
-
 };
 
 // Add markers to the map and bind popups
