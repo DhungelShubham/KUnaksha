@@ -4,55 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kathmandu University Map</title>
-
-    <!-- Font Awesome for icons -->
+    <!-- Link to Leaflet CSS -->
+    <!--font -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-    <!-- Leaflet Routing Machine CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css" />
-
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
 
-    <!-- Top Bar -->
+    <!-- Top bar with title -->
     <div id="top-bar">
         <h1>KU Naksha</h1>
     </div>
 
-    <!-- Side Menu -->
     <div id="menu-bar">
-        <h2>Menu</h2>
-        <ul>
-            <li><a href="KU3dview.html"><i class="fas fa-satellite"></i> Satellite View</a></li>
-            <li><a href="map.html"><i class="fas fa-map"></i> Map</a></li>
-            <li><a href="#" onclick="enableNavigation()"><i class="fas fa-map-marker-alt"></i> Navigation</a></li>
-            <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
-        </ul>
-    </div>
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="KU3dview.html"><i class="fas fa-tachometer-alt"></i>satellite view</a></li>
+        <li><a href="map.html"><i class="fas fa-map"></i> Map</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Navigation</a></li>
+        <li><a href="Prabin/BLOCK2/index.html"><i class="fas fa-info-circle"></i> Streetview</a></li>
+    </ul>
+</div>
 
-    <!-- Map Container -->
-    <div id="map"></div>
+ <!-- Map Container
+ <div id="map"></div>
+</div>
 
-    <!-- Input for navigation -->
-    <div id="navigation-panel">
-        <input type="text" id="startLocation" placeholder="Enter Start Location">
-        <input type="text" id="endLocation" placeholder="Enter Destination">
-        <button onclick="calculateRoute()">Get Directions</button>
-    </div>
+Include Leaflet JS 
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="script.js"></script> -->
 
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <!-- Leaflet Routing Machine -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
-
-    <!-- Your script -->
-    <script src="script.js"></script>
-
+       
 </body>
 </html>
