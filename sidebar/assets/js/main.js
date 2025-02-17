@@ -32,3 +32,18 @@ function colorLink(){
     }
 }
 linkColor.forEach(l=> l.addEventListener('click', colorLink))
+//for others
+document.getElementById("dropdownBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    let dropdown = document.getElementById("dropdownMenu");
+    let parent = this.parentElement;
+    
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+        parent.classList.remove("show");
+    } else {
+        dropdown.style.display = "block";
+        parent.classList.add("show");
+    }
+});
+

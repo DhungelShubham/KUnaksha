@@ -230,3 +230,44 @@ a{
 ::-webkit-scrollbar{
   display: none;
 }
+
+/* Style for dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown__menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgb(83, 83, 83);
+  list-style: none;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.dropdown__menu li {
+  padding: 8px 12px;
+}
+
+.dropdown__menu li:hover {
+  background: #373838;
+}
+
+.dropdown__menu a {
+  text-decoration: none;
+  color: #c1bbbb;
+  display: block;
+}
+
+.dropdown__icon {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.show .dropdown__icon {
+  transform: rotate(180deg);
+}
