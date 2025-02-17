@@ -6,8 +6,7 @@ const viewer=Cesium.Viewer("cesiumContaineer",{
     timeline:false,
     animation:false,
     baseLayerPicker:false,
-    gecoder:Cesium.IonGeocodeProviderType.GOOGLE,
-    gecoder:false,
+    geocoder:Cesium.IonGeocodeProviderType.DEFAULT,
 })
 
 const locations=[

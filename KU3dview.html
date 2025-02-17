@@ -57,9 +57,13 @@
       sceneModePicker:false,
       navigationHelpButton:false,
       fullscreenButton:false,
-      geocoder: Cesium.IonGeocodeProviderType.GOOGLE,
       geocoder:false,
      });
+
+//      const osmImagery = new Cesium.OpenStreetMapImageryProvider({
+//     url: 'https://a.tile.openstreetmap.org/' // Standard OpenStreetMap tiles
+// });
+// viewer.imageryLayers.addImageryProvider(osmImagery);
     
     const locations = [
     {  
@@ -254,7 +258,7 @@
     });
 });
 
-    viewer.flyTo(viewer.entities);
+viewer.flyTo(viewer.entities);
 
     const searchInput = document.getElementById("searchInput");
     const searchResults = document.getElementById("searchResults");
