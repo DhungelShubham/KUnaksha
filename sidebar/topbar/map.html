@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./map.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+    <!-- Top bar -->
+    <div id="top-bar">
+        <h1>KU Naksha</h1>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div id="menu-bar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="/satellite/KU3dview.html"><i class="fas fa-satellite"></i> Satellite View</a></li>
+            <li><a href="map.html"><i class="fas fa-map"></i> Map</a></li>
+            <li><a href="/Prabin/KUcorner/index.html"><i class="fas fa-street-view"></i> Street View</a></li>
+        </ul>
+    </div>
+   
+    <!-- Container for map and info -->
+    <div id="container">
+        <div id="info-panel">
+            <h2>Map Information</h2>
+            <p id="info-content">Click on a marker to see details.</p>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="./script.js"></script>
+</body>
+</html>

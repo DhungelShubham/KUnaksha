@@ -1,0 +1,119 @@
+/* Reset and Base Styles */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fcfcfc;
+}
+
+/* Top Bar Styles */
+#top-bar {
+    background: linear-gradient(90deg, #000000, #2b2929);
+    color: rgb(242, 243, 248);
+    padding: 15px 25px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    z-index: 1000;
+    top: 0;
+}
+
+#top-bar h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+/* Container Styles */
+#container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 70px;
+}
+
+/* Menu Bar Styles */
+#menu-bar {
+    display: block;
+    background: #11101d;
+    color: #fff;
+    padding: 6px 14px;
+    height: 100vh;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 4px rgba(105, 103, 103, 0.1);
+    z-index: 999;
+    padding-top: 70px;
+}
+
+#menu-bar h2 {
+    color: #f9f9f9;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+#menu-bar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu-bar li {
+    margin: 20px 0;
+}
+
+#menu-bar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+#menu-bar a:hover {
+    background: #214734;
+    color: #ffffff;
+}
+
+#menu-bar i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Map Styles */
+#map {
+    width: 61%;
+    height: calc(100vh - 80px);
+    margin: 20px auto;
+    margin-left: calc(200px + 35%);
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(23, 23, 23, 0.1);
+}
+
+/* Info Panel Styles */
+#info-panel {
+    position: absolute;
+    top: 90px;
+    left: 250px;
+    width: 25%;
+    padding: 15px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+}
+
+#info-content {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+}
