@@ -1,0 +1,45 @@
+
+{
+    margin: 0;
+    padding: 0;
+
+}
+.content {
+    width: 100rem ;
+    height: 180rem;
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 400vw;
+    transform: rotate(90deg) translateY(-90vh);
+    transform-origin: top left;
+}
+
+.one{
+    background: red;
+}
+.two{
+    background: green;
+}
+.OuterWrapper{
+    width: 100vh;
+    height : 100vw;
+    transform: rotate(-90deg) translateX(-90vh);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    scrollbar-width: none;
+    -ms-overflow-style:none;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.image {
+    height:30rem;
+    width: auto;
+    object-fit: contain; /* Ensures the whole image is visible */
+    object-position: center;
+}
+
