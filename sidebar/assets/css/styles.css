@@ -38,7 +38,9 @@ a{
 }
 
 /*===== HEADER =====*/
-.header{
+
+/* Modify the existing header styles */
+.header {
   width: 100%;
   height: var(--header-height);
   position: fixed;
@@ -48,13 +50,19 @@ a{
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-
+  background-color: #161617; 
   z-index: var(--z-fixed);
   transition: .5s;
 }
 
-.header__toggle{
-  color: var(--first-color);
+/* Update header text color for visibility */
+.header__title {
+  color: white;
+}
+
+/* Update toggle button color */
+.header__toggle {
+  color: white;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -230,6 +238,13 @@ a{
 ::-webkit-scrollbar{
   display: none;
 }
+.image {
+  height:30rem;
+  width: auto;
+  object-fit: contain; /* Ensures the whole image is visible */
+  object-position: center;
+}
+
 
 /* Style for dropdown */
 .dropdown {
@@ -270,4 +285,56 @@ a{
 
 .show .dropdown__icon {
   transform: rotate(180deg);
+}
+/* Maintain existing styles for image gallery */
+.content-section {
+    width: 100vw;
+    height: 80vh;
+    margin-bottom: 2rem; /* Add space after the gallery */
+}
+
+/* Style for the new content section */
+.info-section {
+    width: 100%;
+    padding: 2rem;
+    margin-top: 85vh; /* Push content below the rotated gallery */
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.about-container,
+.achievements-container {
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+    padding: 1rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Adjust the existing wrapper styles */
+.OuterWrapper {
+    width: 185rem;
+    height: 100vw;
+    transform: rotate(-90deg) translateX(-100vh);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* Remove margin-bottom as we're handling spacing differently */
+}
+
+/* Make sure the wrapper doesn't overlap */
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 400vw;
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
 }

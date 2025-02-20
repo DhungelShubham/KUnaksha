@@ -18,7 +18,7 @@ const data = {
         coords: [27.619570, 85.538588],
         title: "KU Corner",
         address: `https://soed.ku.edu.np/dean-s-corner`,
-        streetview: 'maps/index.html',
+        streetview: '/Prabin/KUcorner/index.html',
         description: "Museum of space history in Dhulikhel Address: JG9Q+RC6, Dhulikhel 45200",
 
     },
@@ -27,7 +27,7 @@ const data = {
         coords: [27.618968, 85.538574],
         title: "Library",
         address: "Kathmandu University Central Library",
-        streetview: 'maps/index.html',
+        streetview: '/Prabin/LIB/index.html',
         description: `
         The Kathmandu University Central Library (KUCL) is centrally located in the university central premises and can be reached within three to five minutes from all departments and hostels.
         The library is housed in a three-story building with a space of about 2290 square meter. The KUCL has majority of books and journals specially related with School of Science and School of Engineering. 
@@ -47,7 +47,7 @@ const data = {
         coords: [27.619621, 85.538598],
         title: "Kathmandu University Administrative Building",
         address: 'https://ku.edu.np/',
-        streetview: 'maps/index.html',
+        streetview: '/Prabin/BLOCK2/index.html',
         description: `
         Kathmandu University
 <ol>Address : Dhulikhel, Nepal</ol>
@@ -62,7 +62,7 @@ Email : info@ku.edu.np
     coords: [27.619767, 85.538086],
     title: "Block 10",
     address: "Department of Management Informatics and Communication",
-    streetview: 'maps/index.html',
+    streetview: '',
     description: `
     Welcome to the Department of Management Informatics and Communication!
 
@@ -74,7 +74,7 @@ Our department is dedicated to providing cutting-edge education and fostering in
         coords: [27.619414, 85.538907],
         title: "C.V. Raman Auditorium",
         address: `https://ku.edu.np/history`,
-        streetview: 'maps/index.html',
+        streetview: '/Prabin/BLOCK2/index.html',
         description: `Best place at KU for organizing events. CV Raman has three halls Main Auditorium, Senate hall and Mini Auditorium.
 KU canteen is also situated in CV Raman Block`,
 
